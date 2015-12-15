@@ -101,7 +101,7 @@
 	.slogan{
 		margin-left: 20px;
 		p{
-			padding: 0;
+			padding: 0; 
 		}
 	}
 	.section-1{
@@ -109,10 +109,19 @@
 		padding-right: 20px;
 		padding-top: 40px;
 		.item{
-		border-bottom: 1px solid #fff;
-		padding: 0;
+			border-bottom: 1px solid #fff;
+			padding: 0;
+			padding-bottom: 20px;
+		}
 	}
-	}
+
+.content-img{
+	height: 200px;
+}
+.section-1 .section-content .content-text {
+    padding: 55px 30px 38px;
+}
+
 }
 
 

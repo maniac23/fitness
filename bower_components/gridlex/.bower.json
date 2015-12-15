@@ -1,0 +1,35 @@
+{
+  "name": "gridlex",
+  "version": "2.0.7",
+  "description": "Just a Flexbox Grid System",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:devlint/gridlex.git"
+  },
+  "author": "https://github.com/devlint",
+  "keywords": [
+    "grid",
+    "flexbox",
+    "less"
+  ],
+  "main": [
+    "src/gridlex.less",
+    "dist/gridlex.css",
+    "dist/gridlex.min.css"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "node_modules"
+  ],
+  "homepage": "https://github.com/devlint/gridlex",
+  "_release": "2.0.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.7",
+    "commit": "b82aa1c10450d268de0266593ff90d6cd4a2acc6"
+  },
+  "_source": "git://github.com/devlint/gridlex.git",
+  "_target": "~2.0.7",
+  "_originalSource": "gridlex",
+  "_direct": true
+}

@@ -64,6 +64,13 @@
   		margin-bottom: 15px;
   	}
   }	
+  .leaders-txt{
+	padding: 0 100px;
+	
+	p{
+		padding: 0 100px;
+	}
+}
 }
 
 
@@ -155,6 +162,17 @@
     padding-left: 30px;
     padding-right: 30px;
     }
+ .leaders-container{
+	height: 500px;
+	background-position: top center;
+}   
+ .leaders-txt{
+	padding: 0 20px;
+	
+	p{
+		padding: 0 20px;
+	}
+}  
 }
 
 
@@ -162,7 +180,10 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px){
-	/**/
+
+	.section-2 .grid-noGutter .section2-txt-white-2 {
+		min-height: 334px;
+	}
 }
 
 

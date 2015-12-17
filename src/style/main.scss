@@ -69,6 +69,7 @@ p{
 .logo{
 	position: absolute;
 	float: left;
+	width: 100px;
 	a{
 		color: $white-color;
 	}
@@ -284,6 +285,7 @@ p{
 		position: absolute;
 		bottom: 45px;
 		right: 50px;
+		width: 150px;
 		.txt-wrap{
 			display: inline-block;
 			margin-right: 13px;
@@ -317,6 +319,7 @@ p{
 		position: absolute;
 		bottom: 45px;
 		left: 50px;
+		width: 180px;
 		.txt-wrap{
 			display: inline-block;
 			margin-right: 13px;
@@ -367,6 +370,7 @@ p{
 			display: inline-block;
 			float: right;
 			position: relative;
+			width: 135px;
 			img{
 				 bottom: 12px;
     		 position: absolute;
@@ -448,7 +452,7 @@ p{
 		padding-top: 55px;
 		padding-left: 42px;
 		padding-right: 69px;
-		padding-bottom: 76px;
+		padding-bottom: 129px;
 		max-width: 781px;
 		min-height: 334px;
 
@@ -478,13 +482,13 @@ p{
 		background-size: cover;
 		background-position: center;
 		max-width: 401px;
-		height: 334px;
+		min-height: 334px;
 	}
 .section-2 .grid-noGutter .section2-txt-green-2{
 	background-color: $green-color;
 	color: #fff;
 	max-width: 401px;
-	height: 334px;
+	min-height: 334px;
 	padding-top: 55px;
 	padding-bottom: 70px;
 	padding-left: 40px;
@@ -527,6 +531,37 @@ p{
 	p{
 		padding: 0 $def-padding;
 		text-shadow: 1px 1px 1px black;
+	}
+}
+footer{
+	background-color: $bg-color;
+	padding: 64px 150px 47px;
+	.footer-icons{
+		list-style-type: none;
+		padding-left: 0;
+		li{
+			display: inline-block;
+			margin-right: 11px;
+		}
+	}
+	input{
+		color: #000;
+		height: 15px;
+		border: none;
+		border-radius: 2%;
+		padding: 16px 20px;
+		margin-bottom: 20px;
+	}
+	button{
+		background-color: $green-color;
+		border: none;
+		font-size: 15px;
+		text-align: center;
+		height: 47px;
+		width: 183px;
+		border-radius: 2%;
+		font-weight: bold;
+
 	}
 }
 

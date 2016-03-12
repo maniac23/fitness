@@ -8,7 +8,6 @@ $(document).ready(function() {
 
 	$('.section-1 .item').equalHeights();
 
-	
 
 
 	//Цели для Яндекс.Метрики и Google Analytics
@@ -24,14 +23,6 @@ $(document).ready(function() {
 			return $(this).attr("src").replace(".svg", ".png");
 		});
 	};
-
-	$(".homesect .section-bottom .buttons").click(function() {
-		$("#callback h4").html($(this).text());
-		$("#callback input[name=formname]").val($(this).text());
-	}).magnificPopup({
-		type:"inline",
-		mainClass: 'mfp-forms'
-	});
 
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/

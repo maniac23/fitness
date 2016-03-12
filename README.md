@@ -7,6 +7,7 @@
 * Bower
 * Gulp
 * SASS
+* Bourbon
 * [Gridlex](http://gridlex.devlint.fr/)
 * [Jquery](https://jquery.com)
 * [equalHeights](https://github.com/mattbanks/jQuery.equalHeights)

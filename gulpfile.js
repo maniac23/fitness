@@ -2,7 +2,6 @@ var gulp = require('gulp');
 concatCss = require("gulp-concat-css"),
 minifyCss = require('gulp-minify-css'),
 rename = require('gulp-rename'),
-livereload = require('gulp-livereload'),
 sass = require('gulp-sass'),
 uncss = require("gulp-uncss"),
 globbing = require('gulp-css-globbing'),
@@ -19,12 +18,11 @@ reload = browserSync.reload;
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
-        html: 'build/',
-        js: 'build/js/',
-        css: 'build/css/',
-        img: 'build/img/',
-        fonts: 'build/fonts/',
-        libs: 'build/js/libs/'
+        html: '',
+        js: 'js/',
+        css: 'css/',
+        img: 'img/',
+        fonts: 'fonts/'
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
@@ -39,12 +37,11 @@ var path = {
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
-    },
-    clean: './build'
+    }
 };
     var config = {
     	server: {
-    		baseDir: "./build"
+    		baseDir: "."
     	},
     	tunnel: true,
     	host: 'localhost',
@@ -52,8 +49,7 @@ var path = {
     	logPrefix: "Maniac"
     };
 
-
-//компиляция sass стилевых файлов
+//css
 gulp.task('styles', function () {
 	gulp.src(path.src.style)
 	.pipe(bulkSass())
@@ -68,14 +64,13 @@ gulp.task('styles', function () {
 	.pipe(minifyCss())
 	.pipe(gulp.dest(path.build.css))
 	.pipe(reload({stream: true}));
-
+	
 });
 
-// webserver
+
 gulp.task('webserver', function () {
     browserSync(config);
 });
-
 //html
 gulp.task('html', function(){
 	gulp.src(path.src.html)
@@ -83,6 +78,11 @@ gulp.task('html', function(){
 	.pipe(notify("Done My Bosssss!"))
 	.pipe(reload({stream: true}));
 	
+});
+gulp.task('js', function(){
+    gulp.src(path.src.js)
+    .pipe(gulp.dest(path.build.js))
+    .pipe(reload({stream: true}));
 });
 
 // uncss
@@ -93,8 +93,6 @@ gulp.task('uncss', function(){
 	}))
 	.pipe(gulp.dest('app/css'));
 });
-
-//изображения
 
 gulp.task('image', function () {
     gulp.src(path.src.img) //Выберем наши картинки
@@ -107,12 +105,10 @@ gulp.task('image', function () {
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({stream: true}));
 });
-//fonts
 gulp.task('fonts', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
-//watch
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
         gulp.start('html');
@@ -120,7 +116,9 @@ gulp.task('watch', function(){
     watch([path.watch.style], function(event, cb) {
         gulp.start('styles');
     });
-    
+    watch([path.watch.js], function(event, cb) {
+        gulp.start('js');
+    })
     watch([path.watch.img], function(event, cb) {
         gulp.start('image');
     });
@@ -148,4 +146,4 @@ gulp.task('mainCSS', function() {
 });
 
 //default
-	gulp.task('default', ['html', 'styles','watch', 'image', 'fonts', 'webserver']);
+	gulp.task('default', ['html', 'styles', 'js', 'watch', 'image', 'fonts', 'webserver']);
